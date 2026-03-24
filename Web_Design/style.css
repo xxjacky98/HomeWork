@@ -1,0 +1,377 @@
+/*全域樣式重置*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Microsoft JhengHei", "Heiti TC", sans-serif;
+}
+
+/*頁面整體基底設定*/
+body {
+    background-color: #f5f7fa;
+    color: #333;
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 40px 20px;
+}
+
+/*==========標題區樣式========*/
+.header {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.header h1 {
+    color: #003366;
+    font-size: 3.5rem;
+    font-weight: 900;
+    margin-bottom: 30px;
+    line-height: 1.4;
+}
+
+/*小火車循環動畫*/
+.train-animation {
+    width: 100%;
+    height: 120px;
+    background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 50'%3E%3Crect x='10' y='20' width='40' height='20' rx='5' fill='%23FFCC00'/%3E%3Crect x='55' y='20' width='30' height='20' rx='3' fill='%23003366'/%3E%3Ccircle cx='25' cy='42' r='5' fill='%23333'/%3E%3Ccircle cx='45' cy='42' r='5' fill='%23333'/%3E%3Ccircle cx='65' cy='42' r='5' fill='%23333'/%3E%3Ccircle cx='80' cy='42' r='5' fill='%23333'/%3E%3C/svg%3E") no-repeat center;
+    background-size: contain;
+    animation: moveTrain 3s linear infinite;
+}
+
+@keyframes moveTrain {
+    0% { transform: translateX(-80px); opacity: 0; }
+    20% { opacity: 1; }
+    80% { opacity: 1; }
+    100% { transform: translateX(80px); opacity: 0; }
+}
+
+/*==========安撫區塊樣式========*/
+.empathy {
+    background-color: #fff;
+    padding: 35px;
+    border-radius: 12px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.1);
+    margin-bottom: 40px;
+    text-align: center;
+}
+
+.empathy p {
+    font-size: 1.35rem;
+    font-weight: 500;
+    line-height: 1.8;
+    color: #222;
+}
+
+/*=========合3========*/
+.guarantees {
+    margin-bottom: 40px;
+}
+
+/*!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+.guarantee-card {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.1);
+    margin-bottom: 25px;
+    border-left: 6px solid #FFCC00;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    /*頁面載入隨機放大動畫
+    opacity: 0;
+    transform: scale(0.8);
+}!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!*/
+
+.guarantee-card {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.1);
+    margin-bottom: 25px;
+    border-left: 8px solid #FFCC00; /* 台鐵品牌暖黃 */
+    transition: transform 0.2s ease, box-shadow 0.2s ease; /* 預設有回彈 */
+    cursor: default;
+    /* 頁面載入初始狀態，給開場動畫用 */
+    opacity: 0;
+    transform: scale(0.8);
+}
+
+/* 卡片標題大幅放大（核心修改） */
+.guarantee-card h3 {
+    color: #003366;
+    font-size: 1.9rem; /* 從原本的大小放大到1.9rem，成為視覺重點 */
+    font-weight: 900; /* 超粗體，強化醒目度 */
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    line-height: 1.4;
+}
+
+.guarantee-card h3::before {
+    content: "✅";
+    margin-right: 12px;
+    font-size: 1.6rem; /* 前面的勾勾同步放大，對齊標題 */
+}
+
+.guarantee-card p {
+    font-size: 1.05rem;
+    line-height: 1.7;
+}
+
+/* 滑鼠hover放大效果 */
+.guarantee-card:hover {
+    transition: none; /* 進入時立即放大 */
+    transform: scale(1.04);
+    box-shadow: 0 5px 20px rgba(0,51,102,0.15);
+}
+
+/* --------------------------
+ 三張卡片隨機放大核心動畫（必須新增）
+-------------------------- */
+@keyframes cardRandomZoom {
+  0% { 
+    transform: scale(1); 
+    box-shadow: 0 2px 12px rgba(0,0,0,0.1);
+  }
+  50% { 
+    transform: scale(1.08); /* 放大8%，夠明顯又不會太突兀 */
+    box-shadow: 0 8px 28px rgba(0,51,102,0.25);
+    z-index: 10; /* 放大時自動蓋在其他卡片上面 */
+  }
+  100% { 
+    transform: scale(1); 
+    box-shadow: 0 2px 12px rgba(0,0,0,0.1);
+  }
+}
+
+/* 觸發隨機放大的專用class（必須新增） */
+.guarantee-card.card-zoom-active {
+  animation: cardRandomZoom 1.2s ease-in-out;
+}
+
+/* 頁面載入時的卡片開場彈出動畫（必須新增） */
+.guarantee-card.loaded {
+  opacity: 1;
+  transform: scale(1);
+  transition: all 0.6s ease-out;
+}
+
+/*=========系統復原進度區樣式==========*/
+.progress-section {
+    background-color: #fff;
+    padding: 35px;
+    border-radius: 12px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.1);
+    margin-bottom: 40px;
+}
+
+.progress-section h3 {
+    color: #003366;
+    font-size: 1.4rem;
+    margin-bottom: 15px;
+}
+
+.progress-section p {
+    font-size: 1.1rem;
+    margin-bottom: 10px;
+}
+
+.progress-bar {
+    width: 100%;
+    height: 25px;
+    background-color: #e0e0e0;
+    border-radius: 15px;
+    overflow: hidden;
+    margin: 25px 0;
+}
+
+.progress-fill {
+    height: 100%;
+    background-color: #003366;
+    width: 0%;
+    transition: width 0.5s ease;
+    border-radius: 15px;
+}
+
+.progress-steps {
+    list-style: none;
+    margin-top: 20px;
+}
+
+.progress-steps li {
+    margin-bottom: 12px;
+    font-size: 1.1rem;
+    display: flex;
+    align-items: center;
+}
+
+.progress-steps li.completed::before {
+    content: "✅";
+    margin-right: 12px;
+}
+
+.progress-steps li.in-progress::before {
+    content: "⏳";
+    margin-right: 12px;
+}
+
+.progress-steps li.pending::before {
+    content: "☐";
+    margin-right: 12px;
+}
+
+/*==========行動指引區樣式==========*/
+.guide {
+    background-color: #fff;
+    padding: 35px;
+    border-radius: 12px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.1);
+    margin-bottom: 40px;
+}
+
+.guide h3 {
+    color: #003366;
+    font-size: 1.4rem;
+    margin-bottom: 20px;
+}
+
+.guide ul {
+    list-style: none;
+}
+
+.guide li {
+    margin-bottom: 12px;
+    font-size: 1.1rem;
+    padding-left: 25px;
+    position: relative;
+    line-height: 1.7;
+}
+
+.guide li::before {
+    content: "•";
+    color: #FFCC00;
+    font-weight: bold;
+    font-size: 1.5rem;
+    position: absolute;
+    left: 0;
+    top: -2px;
+}
+
+/*==========戳泡泡遊戲區樣式==========*/
+.game-section {
+    background-color: #fff;
+    padding: 35px;
+    border-radius: 12px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.1);
+    margin-bottom: 40px;
+    text-align: center;
+}
+
+.game-section h3 {
+    color: #003366;
+    font-size: 1.4rem;
+    margin-bottom: 8px;
+}
+
+.game-section p.helper {
+    font-size: 1.05rem;
+    margin-bottom: 12px;
+    font-weight: 500;
+    color: #6b5b4a;
+}
+
+.bubble-card{
+    background:#F6EBDD;
+    border:1px solid rgba(0,0,0,0.05);
+    border-radius:16px;
+    max-width:1040px;
+    margin:0 auto;
+    padding:28px 18px 22px;
+}
+
+#bubble-complete{ font-size:24px; font-weight:800; color:#FF3B30; margin-bottom:12px; }
+#bubble-complete.pop-anim{ animation: popText 700ms ease; }
+@keyframes popText{ 0%{ transform:translateY(6px) scale(0.95); opacity:0; } 60%{ transform:translateY(-4px) scale(1.05); opacity:1; } 100%{ transform:translateY(0) scale(1); opacity:1; } }
+
+.bubble-grid{ display:grid; grid-template-columns:repeat(8,1fr); column-gap:6px; row-gap:10px; justify-items:center; padding:12px; border:2px solid #e0e0e0; border-radius:12px; background:#F8F3ED; }
+.bubble{ width:64px; height:64px; border-radius:50%; background: radial-gradient(circle at 30% 30%, rgba(255,255,255,0.45), rgba(243,216,198,0.55) 45%, rgba(218,194,176,0.8) 80%); border:1px solid rgba(0,0,0,0.10); box-shadow: 0 8px 18px rgba(0,0,0,0.12), inset 0 3px 8px rgba(255,255,255,0.45); transition:transform 160ms ease, box-shadow 160ms ease; position: relative; }
+.bubble::after{ content:""; position:absolute; top:12px; left:14px; width:16px; height:16px; border-radius:50%; background:rgba(255,255,255,0.5); filter: blur(0.6px); }
+.bubble:active{ transform:scale(0.9); box-shadow: 0 5px 12px rgba(0,0,0,0.12), inset 0 2px 5px rgba(255,255,255,0.45); }
+.bubble.popped{ background: radial-gradient(circle at 50% 50%, rgba(240,210,188,0.85), rgba(218,194,176,0.6)); box-shadow: inset 0 0 0 2px rgba(0,0,0,0.12); }
+.bubble.pop-anim{ animation: pop 220ms ease-out; }
+@keyframes pop{ 0%{ transform:scale(1);} 50%{ transform:scale(0.85);} 100%{ transform:scale(1);} }
+
+.confetti{
+  position:fixed;
+  width:7px;
+  height:14px;
+  border-radius:2px;
+  opacity:0.95;
+  animation: confettiFly 1000ms ease-out forwards;
+  z-index:1500;
+}
+@keyframes confettiFly{
+  0%{ transform: translate(0,0) rotate(0deg); opacity:1; }
+  100%{ transform: translate(var(--dx), var(--dy)) rotate(360deg); opacity:0; }
+}
+
+/*==========頁尾==========*/
+.footer {
+    text-align: center;
+    color: #666;
+    margin-top: 40px;
+    font-size: 1.05rem;
+    line-height: 1.8;
+}
+
+/*==========RWD手機端適配=========*/
+@media screen and (max-width: 768px) {
+    .header h1 {
+        font-size: 2.2rem;
+    }
+    .empathy p {
+        font-size: 1.15rem;
+    }
+    .guarantee-card h3 {
+        font-size: 1.3rem;
+    }
+    .bubble-grid {
+        grid-template-columns: repeat(6, 1fr);
+    }
+    .bubble{ width:54px; height:54px; }
+}
+
+/* --------------------------
+ 必須補上：三張卡片隨機放大核心動畫
+-------------------------- */
+@keyframes cardRandomZoom {
+  0% { 
+    transform: scale(1); 
+    box-shadow: 0 2px 12px rgba(0,0,0,0.1);
+  }
+  50% { 
+    transform: scale(1.08); 
+    box-shadow: 0 8px 28px rgba(0,51,102,0.25);
+    z-index: 10;
+  }
+  100% { 
+    transform: scale(1); 
+    box-shadow: 0 2px 12px rgba(0,0,0,0.1);
+  }
+}
+
+/* 必須補上：觸發隨機放大的專用class */
+.guarantee-card.card-zoom-active {
+  animation: cardRandomZoom 1.2s ease-in-out;
+}
+
+/* 優化：卡片載入動畫class */
+.guarantee-card.loaded {
+  opacity: 1;
+  transform: scale(1);
+  transition: all 0.6s ease-out;
+}
+

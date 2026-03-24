@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>台鐵訂票系統 - 系統暫時維護中</title>
+
+
+
+
+    <!--引入獨立CSS檔-->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+
+        <!--標題區-->
+        <div class="header">
+            <h1>哎呀！台鐵訂票系統暫時歇口氣，請您稍等一下</h1>
+            <div class="train-animation"></div>
+        </div>
+
+        <!--安撫區-->
+        <div class="empathy">
+            <p>我們知道您正趕著預訂車票、甚至已經走到付款步驟，卻遇到系統不順，不只打亂行程規劃，更讓人滿心緊張、擔心訂單出狀況，真的超級抱歉，讓您這麼不安。</p>
+        </div>
+
+        <!--核三-->
+        <div class="guarantees">
+            <div class="guarantee-card">
+                <h3>付款絕對安全，不會亂扣款</h3>
+                <p>若您已輸入付款資訊，請完全不用擔心！所有未完成訂位的交易，系統絕對不會請銀行進行扣款；若有極少數已扣款的例外狀況，我們會在系統恢復後24小時內全額退回，並主動發送簡訊通知您，絕對不會讓您有任何損失。</p>
+            </div>
+            <div class="guarantee-card">
+                <h3>輸入的資料都還在，不用重打一次</h3>
+                <p>您剛剛填寫的乘車日期、起訖站、車次偏好等所有搜尋與訂票資訊，我們都已安全暫存，系統恢復正常後，會直接帶您回到剛剛的操作頁面，不用從頭再來一次。</p>
+            </div>
+            <div class="guarantee-card">
+                <h3>心儀車次票額有保留，不用怕搶不到</h3>
+                <p>因本次系統異常影響您訂票權益的狀況，我們已緊急協調鎖定受影響車次的專屬票額，待系統恢復後優先開放給受影響的使用者，不用擔心等待的時間裡，想搭的車次就沒票了。</p>
+            </div>
+        </div>
+
+        <!--系統復原進度-->
+        <div class="progress-section">
+            <h3>系統復原最新進度</h3>
+            <p>目前狀態：伺服器瞬間流量過載，工程團隊正在全速搶修復原</p>
+            <p>預計恢復時間：約 <span id="countdown">3</span> 分鐘</p>
+            
+            <div class="progress-bar">
+                <div class="progress-fill" id="progressFill"></div>
+            </div>
+
+            <ul class="progress-steps" id="progressSteps">
+                <li class="completed">已完成異常原因定位</li>
+                <li class="in-progress">正在進行系統穩定性測試</li>
+                <li class="pending">系統恢復，自動跳轉回訂票頁面</li>
+            </ul>
+        </div>
+
+        <!--溫馨行動-->
+        <div class="guide">
+            <h3>溫馨行動指引</h3>
+            <ul>
+                <li>請不要頻繁重新整理頁面，反而會加重伺服器負擔，延長系統恢復時間</li>
+                <li>本頁面會自動偵測系統狀態，恢復正常後會立即自動跳轉，不用額外操作</li>
+                <li>若超過30分鐘頁面仍未恢復，可撥打台鐵訂票客服專線：412-6666（手機撥打請加02），或24小時緊急通報電話1933</li>
+            </ul>
+        </div>
+
+        <!--戳泡泡-->
+        <div class="game-section" id="bubble">
+            <div class="bubble-card">
+                <h3>需要放鬆一下嗎？</h3>
+                <p class="helper">點一下泡泡，讓情緒慢慢舒緩</p>
+                <div id="bubble-complete" class="helper"></div>
+                <div class="bubble-grid">
+                    <span class="bubble"></span><span class="bubble"></span><span class="bubble"></span><span class="bubble"></span><span class="bubble"></span><span class="bubble"></span><span class="bubble"></span><span class="bubble"></span><span class="bubble"></span><span class="bubble"></span>
+                    <span class="bubble"></span><span class="bubble"></span><span class="bubble"></span><span class="bubble"></span><span class="bubble"></span><span class="bubble"></span><span class="bubble"></span><span class="bubble"></span><span class="bubble"></span><span class="bubble"></span>
+                    <span class="bubble"></span><span class="bubble"></span><span class="bubble"></span><span class="bubble"></span><span class="bubble"></span><span class="bubble"></span><span class="bubble"></span><span class="bubble"></span><span class="bubble"></span><span class="bubble"></span>
+                    <span class="bubble"></span><span class="bubble"></span><span class="bubble"></span><span class="bubble"></span><span class="bubble"></span><span class="bubble"></span><span class="bubble"></span><span class="bubble"></span><span class="bubble"></span><span class="bubble"></span>
+                    <span class="bubble"></span><span class="bubble"></span><span class="bubble"></span><span class="bubble"></span><span class="bubble"></span><span class="bubble"></span><span class="bubble"></span><span class="bubble"></span><span class="bubble"></span><span class="bubble"></span>
+                    <span class="bubble"></span><span class="bubble"></span><span class="bubble"></span><span class="bubble"></span><span class="bubble"></span><span class="bubble"></span>
+                </div>
+            </div>
+        </div>
+
+        <!--頁尾致歉區-->
+        <div class="footer">
+            <p>真的非常抱歉，因為系統異常打擾了您的行程規劃。台鐵全體團隊正在盡全力縮短恢復時間，守護您的每一趟平安旅程。</p>
+        </div>
+    </div>
+
+    <!--引入獨立JS檔-->
+    <script src="hudon.js"></script>
+</body>
+</html>
