@@ -8,15 +8,51 @@
 
 /*頁面整體基底設定*/
 body {
-    background-color: #f5f7fa;
-    color: #333;
+    background-color: #f2f6fb;
+    color: #1f2937;
     line-height: 1.6;
 }
 
-.container {
-    max-width: 900px;
+/* 台鐵風格品牌列 */
+.brand-bar {
+    background: #003B73;
+    color: #fff;
+    border-bottom: 4px solid #FFD100;
+}
+.brand-inner {
+    max-width: 960px;
     margin: 0 auto;
-    padding: 40px 20px;
+    padding: 14px 20px;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+.logo {
+    width: 48px;
+    height: 48px;
+    border-radius: 10px;
+    background: #FFD100;
+    color: #003B73;
+    display: grid;
+    place-items: center;
+    font-weight: 900;
+    letter-spacing: 2px;
+}
+.brand-main {
+    font-size: 1.2rem;
+    font-weight: 800;
+    letter-spacing: 1px;
+}
+.brand-sub {
+    font-size: 0.9rem;
+    opacity: 0.9;
+    letter-spacing: 0.5px;
+}
+
+.container {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 36px 20px 40px;
 }
 
 /*==========標題區樣式========*/
@@ -26,11 +62,11 @@ body {
 }
 
 .header h1 {
-    color: #003366;
-    font-size: 3.5rem;
+    color: #003B73;
+    font-size: 3.1rem;
     font-weight: 900;
-    margin-bottom: 30px;
-    line-height: 1.4;
+    margin-bottom: 24px;
+    line-height: 1.35;
 }
 
 /*小火車循環動畫*/
@@ -101,7 +137,7 @@ body {
 
 /* 卡片標題大幅放大（核心修改） */
 .guarantee-card h3 {
-    color: #003366;
+    color: #003B73;
     font-size: 1.9rem; /* 從原本的大小放大到1.9rem，成為視覺重點 */
     font-weight: 900; /* 超粗體，強化醒目度 */
     margin-bottom: 15px;
@@ -169,7 +205,7 @@ body {
 }
 
 .progress-section h3 {
-    color: #003366;
+    color: #003B73;
     font-size: 1.4rem;
     margin-bottom: 15px;
 }
@@ -190,7 +226,7 @@ body {
 
 .progress-fill {
     height: 100%;
-    background-color: #003366;
+    background: linear-gradient(90deg, #003B73 0%, #0056A6 70%, #FFD100 100%);
     width: 0%;
     transition: width 0.5s ease;
     border-radius: 15px;
@@ -233,7 +269,7 @@ body {
 }
 
 .guide h3 {
-    color: #003366;
+    color: #003B73;
     font-size: 1.4rem;
     margin-bottom: 20px;
 }
@@ -271,7 +307,7 @@ body {
 }
 
 .game-section h3 {
-    color: #003366;
+    color: #003B73;
     font-size: 1.4rem;
     margin-bottom: 8px;
 }
