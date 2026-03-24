@@ -182,6 +182,17 @@ function initBubbleGame() {
         }
     };
 
+    const resetBtn = document.getElementById('bubble-reset');
+    if (resetBtn) {
+        resetBtn.addEventListener('click', () => {
+            document.querySelectorAll('.bubble').forEach(el => {
+                el.classList.remove('popped', 'pop-anim');
+            });
+            const msg = document.getElementById('bubble-complete');
+            if (msg) msg.textContent = '';
+        });
+    }
+
     bubbles.forEach(b => b.addEventListener('click', () => {
         b.classList.toggle('popped');
         b.classList.remove('pop-anim');

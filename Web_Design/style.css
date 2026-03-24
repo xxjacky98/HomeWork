@@ -328,6 +328,20 @@ body {
     padding:28px 18px 22px;
 }
 
+.bubble-reset{
+    background:#003B73;
+    color:#fff;
+    border:none;
+    padding:8px 16px;
+    border-radius:999px;
+    font-weight:700;
+    cursor:pointer;
+    margin-bottom:12px;
+    transition: transform 120ms ease, box-shadow 120ms ease;
+}
+.bubble-reset:hover{ transform: scale(1.04); box-shadow:0 6px 14px rgba(0,0,0,0.15); }
+.bubble-reset:active{ transform: scale(0.98); }
+
 #bubble-complete{ font-size:24px; font-weight:800; color:#FF3B30; margin-bottom:12px; }
 #bubble-complete.pop-anim{ animation: popText 700ms ease; }
 @keyframes popText{ 0%{ transform:translateY(6px) scale(0.95); opacity:0; } 60%{ transform:translateY(-4px) scale(1.05); opacity:1; } 100%{ transform:translateY(0) scale(1); opacity:1; } }
