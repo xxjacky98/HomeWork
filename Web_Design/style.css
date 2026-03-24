@@ -48,6 +48,18 @@ body {
     opacity: 0.9;
     letter-spacing: 0.5px;
 }
+.brand-links{
+    margin-left:auto;
+    display:flex;
+    gap:16px;
+    font-size:0.95rem;
+}
+.brand-links a{
+    color:#fff;
+    text-decoration:none;
+    opacity:0.9;
+}
+.brand-links a:hover{ opacity:1; text-decoration:underline; }
 
 .container {
     max-width: 960px;
@@ -350,7 +362,7 @@ body {
 .bubble{ width:64px; height:64px; border-radius:50%; background: radial-gradient(circle at 30% 30%, rgba(255,255,255,0.45), rgba(243,216,198,0.55) 45%, rgba(218,194,176,0.8) 80%); border:1px solid rgba(0,0,0,0.10); box-shadow: 0 8px 18px rgba(0,0,0,0.12), inset 0 3px 8px rgba(255,255,255,0.45); transition:transform 160ms ease, box-shadow 160ms ease; position: relative; }
 .bubble::after{ content:""; position:absolute; top:12px; left:14px; width:16px; height:16px; border-radius:50%; background:rgba(255,255,255,0.5); filter: blur(0.6px); }
 .bubble:active{ transform:scale(0.9); box-shadow: 0 5px 12px rgba(0,0,0,0.12), inset 0 2px 5px rgba(255,255,255,0.45); }
-.bubble.popped{ background: radial-gradient(circle at 50% 50%, rgba(240,210,188,0.85), rgba(218,194,176,0.6)); box-shadow: inset 0 0 0 2px rgba(0,0,0,0.12); }
+.bubble.popped{ background: radial-gradient(circle at 50% 50%, rgba(240,210,188,0.85), rgba(218,194,176,0.6)); box-shadow: inset 0 0 0 2px rgba(0,0,0,0.12); pointer-events: none; }
 .bubble.pop-anim{ animation: pop 220ms ease-out; }
 @keyframes pop{ 0%{ transform:scale(1);} 50%{ transform:scale(0.85);} 100%{ transform:scale(1);} }
 
@@ -376,6 +388,20 @@ body {
     font-size: 1.05rem;
     line-height: 1.8;
 }
+.footer-links{
+    display:flex;
+    gap:18px;
+    justify-content:center;
+    margin-top:12px;
+    flex-wrap:wrap;
+}
+.footer-links a{
+    color:#003B73;
+    text-decoration:none;
+    font-weight:600;
+}
+.footer-links a:hover{ text-decoration:underline; }
+.footer-copy{ margin-top:10px; font-size:0.95rem; color:#64748b; }
 
 /*==========RWD手機端適配=========*/
 @media screen and (max-width: 768px) {
@@ -388,10 +414,32 @@ body {
     .guarantee-card h3 {
         font-size: 1.3rem;
     }
-    .bubble-grid {
-        grid-template-columns: repeat(6, 1fr);
+    .brand-inner{
+        flex-wrap: wrap;
+        justify-content: center;
     }
-    .bubble{ width:54px; height:54px; }
+    .brand-links{
+        width:100%;
+        justify-content:center;
+        margin-top:8px;
+        flex-wrap:wrap;
+    }
+
+    /* 泡泡區手機版舒適排版 */
+    .bubble-card{
+        padding: 20px 12px 18px;
+    }
+    .bubble-reset{
+        width: 100%;
+        max-width: 240px;
+    }
+    .bubble-grid {
+        grid-template-columns: repeat(4, 1fr);
+        row-gap: 10px;
+        column-gap: 8px;
+        justify-items: center;
+    }
+    .bubble{ width:52px; height:52px; }
 }
 
 /* --------------------------
